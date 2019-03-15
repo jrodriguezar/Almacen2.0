@@ -113,14 +113,14 @@ public class Robot1 extends Thread{
                     System.out.println("numerin c " + w);
                 }
                 System.out.println(revisar(avenidas, caies));
-                robot.move();
+                //robot.move();
                 if (!revisar(avenidas, caies)) {
                     robot.move();
                 } else {
                     try {
                         sleep( (int)(Math.random() * 2600 ) );
                         } catch( InterruptedException e ) {
-                            ;}
+                            }
                 }
             }
         }

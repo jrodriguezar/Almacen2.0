@@ -7,6 +7,7 @@ import java.util.Scanner;
 /**
  *
  * @author Jhon
+ * 
  */
 public class Pruebalmacen {
 
@@ -27,13 +28,14 @@ public class Pruebalmacen {
         ingresa = e.next();
         int a = Integer.parseInt(ingresa);
         if (a == 1) {
-            Robot1 hilo1 = new Robot1(robot1, lugar);
+            Robot2 hilo1 = new Robot2(robot1, lugar);
             hilo1.start();
+            hilo1.setPriority(10);
             Robot2 hilo2 = new Robot2(robot2, lugar);
             hilo2.start();
         } else {
             Robot2 hilo2 = new Robot2(robot2, lugar);
-            hilo2.run();
+            hilo2.start();
         }
     }
 

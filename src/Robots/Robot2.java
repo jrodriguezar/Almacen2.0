@@ -166,7 +166,15 @@ public class Robot2 extends Thread {
         }
     }*/
 
-
+    public  boolean hay_robot_frente(ArrayList<Integer> a,ArrayList<Integer> c){
+        for (int i = 0; i < a.size(); i++) {
+                if(c.get(i).equals(robot.getStreet()) && a.get(i).equals(robot.getAvenue())){
+            
+                }
+        }
+        return false;
+    }
+    
     public boolean revisar(ArrayList<Integer> avenidas, ArrayList<Integer> caies) {//arreglar para que disponga cada una de las intersecciones y que estas intersecciones se vayan actualizando siempre y eliminando las anteriores
         avenidas = new ArrayList<>();
         caies = new ArrayList<>();
@@ -177,24 +185,28 @@ public class Robot2 extends Thread {
         switch (robot.getDirection()) {
             case NORTH:
                 if (caies.contains(robot.getStreet() - 1) && avenidas.contains(robot.getAvenue())) {
+                    System.out.println("true arriba");
                     return true;
                 }
             break;
                 
             case SOUTH:
                 if (caies.contains(robot.getStreet() + 1) && avenidas.contains(robot.getAvenue())) {
+                    System.out.println("true abajo");
                     return true;
                 }
             break;
             
             case WEST:
                 if (caies.contains(robot.getStreet()) && avenidas.contains(robot.getAvenue() - 1)) {
+                    System.out.println("true izquierda");
                     return true;
                 }
             break;
             
             case EAST:
                 if (caies.contains(robot.getStreet()) && avenidas.contains(robot.getAvenue() + 1)) {
+                    System.out.println("true derecha");
                     return true;
                 }
             break;
@@ -212,6 +224,36 @@ public class Robot2 extends Thread {
             ArrayList<Integer> avenidas = new ArrayList<>();
             ArrayList<Integer> caies = new ArrayList<>();
             for (int i = 0; i < 5; i++) {
+                avenidas.clear();
+                caies.clear();
+                for (Robot r : this.city.examineRobots()) {
+                    avenidas.add(r.getAvenue());
+                    caies.add(r.getStreet());
+                }
+                for (int c : avenidas) {
+                    System.out.println("numerin a " + c);
+                }
+                for (int w : caies) {
+                    System.out.println("numerin c " + w);
+                }
+                System.out.println(revisar(avenidas, caies));
+                robot.move();
+                if (!revisar(avenidas, caies)) {
+                    robot.move();
+                } else {
+                    try {
+                        sleep( (int)(Math.random() * 2600 ) );
+                        } catch( InterruptedException e ) {
+                            ;}
+                }
+            }
+        }
+    }
+    public void run(int pasos) {
+        if (true) {
+            ArrayList<Integer> avenidas = new ArrayList<>();
+            ArrayList<Integer> caies = new ArrayList<>();
+            for (int i = 0; i < pasos; i++) {
                 avenidas.clear();
                 caies.clear();
                 for (Robot r : this.city.examineRobots()) {

@@ -13,7 +13,7 @@ public class Main {
         int u = 0;
         int op = 0;
         Scanner teclado = new Scanner(System.in);
-        while (op != 3) {
+        do {
             System.out.println("Escoja una opción:  ");
             System.out.println("1:Ingresar un nuevo producto");
             System.out.println("2:Realizar pedido");
@@ -27,9 +27,10 @@ public class Main {
                     almacen.sacar_estante();
                     break;
                 default:
+                    System.out.println("lo sentimos esa opcion no esta en el menu");
                     break;
             }
-        }
+        }while(op != 3);
     }
 
 }

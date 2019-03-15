@@ -27,7 +27,7 @@ public class Almacen {
     private ArrayList<Factura> facturas;
     private int[][] puestosi;
     
-    public Almacen(){
+    public Almacen(){   
         teclado = new Scanner(System.in);
         almacen = new City();
         
