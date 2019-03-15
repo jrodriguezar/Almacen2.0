@@ -20,8 +20,6 @@ import java.util.Scanner;
 public class Almacen {
     private City almacen;
     private Robot empleado;
-    private Robot1 robot1;
-    private Robot2 robot2;
     private Robot[] robot;
     private Scanner teclado;
     private Estante[][] matriz;
@@ -490,7 +488,6 @@ public class Almacen {
         empleado = new Robot(almacen, 12, 10, Direction.NORTH, 0);
         empleado.setIcon(trabaja);
         empleado.setLabel("Empleado");
-        
     }
     
     public void giroe(int giros){
