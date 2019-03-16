@@ -13,11 +13,29 @@ public class Robot2 extends Thread {
 
     private Robot robot;
     private City city;
+    private int columnaproducto;
+    private String producto; 
+    private int xstantte;
+    private int ystante;
+        private int xrobot;
+    private int yrobot;
+
+    public Robot2(Robot robot, City city, int columnaproducto, String producto, int xstantte, int ystante, int xrobot, int yrobot) {
+        this.robot = robot;
+        this.city = city;
+        this.columnaproducto = columnaproducto;
+        this.producto = producto;
+        this.xstantte = xstantte;
+        this.ystante = ystante;
+        this.xrobot = xrobot;
+        this.yrobot = yrobot;
+    }
 
     public Robot2(Robot robot, City city) {
         this.robot = robot;
         this.city = city;
     }
+    
 
     public void mover(int pasos) {
         for (int i = pasos; i > 0; i--) {
@@ -68,104 +86,15 @@ public class Robot2 extends Thread {
         mira_abajo();
         mover(num_disp_cola);
     }
-
-    /*public void mover_robotsac(String nombre){
-        while (robot[posicion].getStreet() != buscar_streetsacar(nombre)) {
-                robot[posicion].move();
-            }
-            if (robot[posicion].getAvenue() == buscar_avenuesacar(nombre)) {
-                mira_este(posicion);
-            }
-            if (robot[posicion].getAvenue() > buscar_avenuesacar(nombre)) {
-                girar(1, posicion);
-                while (robot[posicion].getAvenue() != buscar_avenuesacar(nombre)) {
-                    robot[posicion].move();
-                }
-                mira_este(posicion);
-            } else {
-                giroDerecha(posicion);
-                while (robot[posicion].getAvenue() != buscar_avenuesacar(nombre)) {
-                    robot[posicion].move();
-                }
-                mira_este(posicion);
-            }
-    }
-    
-    public void mover_robot(int posicion, String nombre){
-        while (robot[posicion].getStreet() != buscar_streetingresar(nombre)) {
-                robot[posicion].move();
-            }
-            if (robot[posicion].getAvenue() == buscar_avenueingresar(nombre)) {
-                mira_este(posicion);
-            }
-            if (robot[posicion].getAvenue() > buscar_avenueingresar(nombre)) {
-                girar(1, posicion);
-                while (robot[posicion].getAvenue() != buscar_avenueingresar(nombre)) {
-                    robot[posicion].move();
-                }
-                mira_este(posicion);
-            } else {
-                giroDerecha(posicion);
-                while (robot[posicion].getAvenue() != buscar_avenueingresar(nombre)) {
-                    robot[posicion].move();
-
-                }
-                mira_este(posicion);
-            }
-    }
-    
-    public void movimiento_robotsac(String nombre, int num_disp_cola) {
-        for (int i = 0; i < 9; i++) {
-            if (robot[i].getStreet() == 7) {
-                mover_robotsac(i, nombre);
-                puestosi[i][0] = robot[i].getStreet();
-                puestosi[i][1] = robot[i].getAvenue();
-                recoger(i);
-                fila(i,num_disp_cola);
-                return;
-            } 
-        }
-    }
-    
-    public void mover_envio(){
-        int ubicacion = robot.getAvenue();
-        mover(1);
-        giroDerecha();
-        while(robot.getAvenue() != 11){
-            robot.move();
-        }
-        giroDerecha();
-        while(robot.getStreet() != 12){
-            robot.move();
-        }
-        recoger();
-        girar(2);
-        while(robot.getStreet() != 0){
-            robot.move();
-        }
-        robot.putThing();
-        girar(2);
-        while(robot.getStreet() != 6){
-            robot.move();
-        }
-        giroDerecha();
-        while(robot.getAvenue() != ubicacion){
-            robot.move();
-        }
-        girar(1);
-        mover(1);
-        girar(2);
-    }
-    
-    public void movimiento_envio() {
-        for (int i = 0; i < 9; i++) {
-            if (robot.getStreet() == 7) {
-                mover_envio(i);
-                return;
-            } 
-        }
-    }*/
-
+//
+//
+//    public void irxEstante(){
+//        while(robot.getAvenue() <= ){
+//            if(robot)
+//            robot.move();
+//        }
+//    
+//    }
     public boolean revisar(ArrayList<Integer> avenidas, ArrayList<Integer> caies) {
         avenidas = new ArrayList<>();
         caies = new ArrayList<>();
@@ -292,4 +221,173 @@ public class Robot2 extends Thread {
         }
 
     }
+//getters and setters
+    public Robot getRobot() {
+        return robot;
+    }
+
+    public void setRobot(Robot robot) {
+        this.robot = robot;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public int getColumnaproducto() {
+        return columnaproducto;
+    }
+
+    public void setColumnaproducto(int columnaproducto) {
+        this.columnaproducto = columnaproducto;
+    }
+
+    public String getProducto() {
+        return producto;
+    }
+
+    public void setProducto(String producto) {
+        this.producto = producto;
+    }
+
+    public int getXstantte() {
+        return xstantte;
+    }
+
+    public void setXstantte(int xstantte) {
+        this.xstantte = xstantte;
+    }
+
+    public int getYstante() {
+        return ystante;
+    }
+
+    public void setYstante(int ystante) {
+        this.ystante = ystante;
+    }
+
+    public int getXrobot() {
+        return xrobot;
+    }
+
+    public void setXrobot(int xrobot) {
+        this.xrobot = xrobot;
+    }
+
+    public int getYrobot() {
+        return yrobot;
+    }
+
+    public void setYrobot(int yrobot) {
+        this.yrobot = yrobot;
+    }
+
+
+
+
+
+
+
+
+
+    /*public void mover_robotsac(String nombre){
+        while (robot[posicion].getStreet() != buscar_streetsacar(nombre)) {
+                robot[posicion].move();
+            }
+            if (robot[posicion].getAvenue() == buscar_avenuesacar(nombre)) {
+                mira_este(posicion);
+            }
+            if (robot[posicion].getAvenue() > buscar_avenuesacar(nombre)) {
+                girar(1, posicion);
+                while (robot[posicion].getAvenue() != buscar_avenuesacar(nombre)) {
+                    robot[posicion].move();
+                }
+                mira_este(posicion);
+            } else {
+                giroDerecha(posicion);
+                while (robot[posicion].getAvenue() != buscar_avenuesacar(nombre)) {
+                    robot[posicion].move();
+                }
+                mira_este(posicion);
+            }
+    }
+    
+    public void mover_robot(int posicion, String nombre){
+        while (robot[posicion].getStreet() != buscar_streetingresar(nombre)) {
+                robot[posicion].move();
+            }
+            if (robot[posicion].getAvenue() == buscar_avenueingresar(nombre)) {
+                mira_este(posicion);
+            }
+            if (robot[posicion].getAvenue() > buscar_avenueingresar(nombre)) {
+                girar(1, posicion);
+                while (robot[posicion].getAvenue() != buscar_avenueingresar(nombre)) {
+                    robot[posicion].move();
+                }
+                mira_este(posicion);
+            } else {
+                giroDerecha(posicion);
+                while (robot[posicion].getAvenue() != buscar_avenueingresar(nombre)) {
+                    robot[posicion].move();
+
+                }
+                mira_este(posicion);
+            }
+    }
+    
+    public void movimiento_robotsac(String nombre, int num_disp_cola) {
+        for (int i = 0; i < 9; i++) {
+            if (robot[i].getStreet() == 7) {
+                mover_robotsac(i, nombre);
+                puestosi[i][0] = robot[i].getStreet();
+                puestosi[i][1] = robot[i].getAvenue();
+                recoger(i);
+                fila(i,num_disp_cola);
+                return;
+            } 
+        }
+    }
+    
+    public void mover_envio(){
+        int ubicacion = robot.getAvenue();
+        mover(1);
+        giroDerecha();
+        while(robot.getAvenue() != 11){
+            robot.move();
+        }
+        giroDerecha();
+        while(robot.getStreet() != 12){
+            robot.move();
+        }
+        recoger();
+        girar(2);
+        while(robot.getStreet() != 0){
+            robot.move();
+        }
+        robot.putThing();
+        girar(2);
+        while(robot.getStreet() != 6){
+            robot.move();
+        }
+        giroDerecha();
+        while(robot.getAvenue() != ubicacion){
+            robot.move();
+        }
+        girar(1);
+        mover(1);
+        girar(2);
+    }
+    
+    public void movimiento_envio() {
+        for (int i = 0; i < 9; i++) {
+            if (robot.getStreet() == 7) {
+                mover_envio(i);
+                return;
+            } 
+        }
+    }*/
 }
