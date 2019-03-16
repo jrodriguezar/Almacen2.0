@@ -26,8 +26,7 @@ public class Pruebalmacen {
     private Estante[][] matriz;
     private int nfacturas;
     private ArrayList<Factura> facturas;
-
-    private Robot empleado;
+    private Robot2[] robo;
 
     public Pruebalmacen() {
 
@@ -515,9 +514,9 @@ public class Pruebalmacen {
         }
 
         Trabajador trabaja = new Trabajador();
-        this.empleado = new Robot(lugar, 12, 10, Direction.NORTH, 0);
-        this.empleado.setIcon(trabaja);
-        this.empleado.setLabel("Empleado");
+        Thing empleado = new Thing(lugar, 13, 10);
+        empleado.setIcon(trabaja);
+        empleado.getIcon().setLabel("Empleado");
     }
 
     public boolean espacio_vacio() {
@@ -834,11 +833,14 @@ public class Pruebalmacen {
 
     public boolean ingresar_productoal() {
         int num_disp_cola = 9;
+        //Para manejar las ubicaciones de los estantes
+        ArrayList<Integer> streets = new ArrayList<>();
+        ArrayList<Integer> avenues = new ArrayList<>();
         if (espacio_vacio() == false) {
             System.out.println("No hay espacio disponible en el inventario");
             return false;
         } else {
-            System.out.println("Cuantos tipos de productos va a ingresar?(maximo 20)");
+            System.out.println("Cuantos tipos de productos va a ingresar?");
             String tipo = teclado.next();
             int tip = Integer.parseInt(tipo);
             int s = 0;
@@ -848,10 +850,7 @@ public class Pruebalmacen {
                     while (s < tip) {
                         System.out.println("Ingrese el nombre del producto: ");
                         String nombre = teclado.next();
-                        System.out.println("Ingrese el valor del producto: ");
-                        String valore = teclado.next();
-                        int valor = Integer.parseInt(valore);
-                        Producto product = new Producto(nombre, valor);
+                        Producto product = new Producto(nombre, valor_pro(nombre));
                         if (buscar_producto(nombre)) {
                             System.out.println("Ingrese la cantidad de este producto: ");
                             String cantidade = teclado.next();
@@ -875,7 +874,8 @@ public class Pruebalmacen {
                     }
                     f++;
                 }
-                //devolver(num_disp_cola);
+                //Aqui van los movimientos de la parte grafica
+                
             } else {
                 System.out.println("No tenemos tantos tipos disponibles. Vuelva a intentarlo por favor");
                 return false;
@@ -890,13 +890,16 @@ public class Pruebalmacen {
             System.out.println(" no se agrego factura");
         }
         int num_disp_cola = 9;
-        System.out.println("Cuantos tipos de productos va a sacar?(maximo 20)");
+        //Para manejar las ubicaciones de los estantes
+        ArrayList<Integer> streets = new ArrayList<>();
+        ArrayList<Integer> avenues = new ArrayList<>();
+        System.out.println("Cuantos tipos de productos va a sacar?");
         String tipo = teclado.next();
         int tip = Integer.parseInt(tipo);
         int s = 0;
         int f = s;
         int avenue = 0;
-        if (tip <= 20) {
+        if (tip <= 10) {
             while (f < tip) {
                 while (s < tip) {
                     System.out.println("Ingrese el nombre del producto: ");
@@ -925,6 +928,9 @@ public class Pruebalmacen {
 
                 f++;
             }
+            //Aqui van los movimientos de la parte grafica
+            
+            
 //                devolver(num_disp_cola);
 //                giroe(3);
 //                empleado.move();

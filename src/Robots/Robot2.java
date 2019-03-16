@@ -13,22 +13,18 @@ public class Robot2 extends Thread {
 
     private Robot robot;
     private City city;
-    private int columnaproducto;
-    private String producto; 
     private int xstantte;
     private int ystante;
-        private int xrobot;
+    private int xrobot;
     private int yrobot;
 
-    public Robot2(Robot robot, City city, int columnaproducto, String producto, int xstantte, int ystante, int xrobot, int yrobot) {
+    public Robot2(Robot robot, City city, int xstantte, int ystante) {
         this.robot = robot;
         this.city = city;
-        this.columnaproducto = columnaproducto;
-        this.producto = producto;
         this.xstantte = xstantte;
         this.ystante = ystante;
-        this.xrobot = xrobot;
-        this.yrobot = yrobot;
+//        this.xrobot = xrobot;
+//        this.yrobot = yrobot;
     }
 
     public Robot2(Robot robot, City city) {
@@ -87,8 +83,8 @@ public class Robot2 extends Thread {
         mover(num_disp_cola);
     }
 
-
-    public void irxEstante(){
+    @Override
+    public void run(){
         while(robot.getAvenue() > xstantte ){
             robot.move();
             if(robot.getStreet()==1 && xstantte==1 && robot.canPickThing()){
@@ -165,8 +161,8 @@ public class Robot2 extends Thread {
         return false;
     }
 
-    @Override
-    public void run() {
+    
+    public void runprueba() {
         if (true) {
             ArrayList<Integer> avenidas = new ArrayList<>();
             ArrayList<Integer> caies = new ArrayList<>();
@@ -257,22 +253,6 @@ public class Robot2 extends Thread {
         this.city = city;
     }
 
-    public int getColumnaproducto() {
-        return columnaproducto;
-    }
-
-    public void setColumnaproducto(int columnaproducto) {
-        this.columnaproducto = columnaproducto;
-    }
-
-    public String getProducto() {
-        return producto;
-    }
-
-    public void setProducto(String producto) {
-        this.producto = producto;
-    }
-
     public int getXstantte() {
         return xstantte;
     }
@@ -297,13 +277,13 @@ public class Robot2 extends Thread {
         this.xrobot = xrobot;
     }
 
-    public int getYrobot() {
-        return yrobot;
-    }
-
-    public void setYrobot(int yrobot) {
-        this.yrobot = yrobot;
-    }
+//    public int getYrobot() {
+//        return yrobot;
+//    }
+//
+//    public void setYrobot(int yrobot) {
+//        this.yrobot = yrobot;
+//    }
 
 
 
