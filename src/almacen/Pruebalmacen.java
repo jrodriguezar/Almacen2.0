@@ -26,7 +26,7 @@ public class Pruebalmacen {
     private Estante[][] matriz;
     private int nfacturas;
     private ArrayList<Factura> facturas;
-    private Robot2[] robo;
+    private Robot[] robor;
 
     public Pruebalmacen() {
 
@@ -40,13 +40,11 @@ public class Pruebalmacen {
         int iter = 0;
         nfacturas = 0;
         facturas = new ArrayList<>();
-//        robot = new Robot[10];
-//        puestosi = new int[10][2];
+        robor = new Robot[10];
         for (int i = 0; i < 11; i++) {
             Wall norte = new Wall(lugar, 0, i, Direction.NORTH);
         }
         for (int i = 0; i < 11; i++) {
-            //Wall norte = new Wall(almacen, 0, i, Direction.NORTH);
             //pared izquierda
             if (i < 11) {
                 Wall izqui = new Wall(lugar, i, 0, Direction.WEST);
@@ -70,8 +68,9 @@ public class Pruebalmacen {
                 Robot reobot = new Robot(lugar, 12, i, Direction.NORTH, 0);
                 reobot.setIcon(robo);
                 reobot.setLabel("Robot" + " " + num);
+                robor[iter] = reobot;
             }
-//            robot[iter] = reobot;
+            
             num++;
             iter++;
         }
@@ -912,6 +911,7 @@ public class Pruebalmacen {
                         int street = iden_street(nombre);
                         if (cantidad <= can_productos(columna, street, nombre)) {
                             //movimiento_robotsac(nombre, num_disp_cola);
+                            
                             for (int i = 0; i < cantidad; i++) {
                                 facturas.get(0).getProductos().add(i, matriz[columna][street].saca(nombre));
                             }
