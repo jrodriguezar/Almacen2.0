@@ -17,6 +17,10 @@ public class Estante {
         this.espacio = espacio;
         this.thing = thing;
     }
+
+    public Estante(Espacio[][] espacio) {
+        this.espacio = espacio;
+    }
     
     public Espacio[][] getEspacio() {
         return espacio;

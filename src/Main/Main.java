@@ -1,5 +1,6 @@
-package almacen;
+package Main;
 
+import almacen.Almacen;
 import java.util.Scanner;
 
 /**
