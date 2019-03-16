@@ -86,15 +86,18 @@ public class Robot2 extends Thread {
         mira_abajo();
         mover(num_disp_cola);
     }
-//
-//
-//    public void irxEstante(){
-//        while(robot.getAvenue() <= ){
-//            if(robot)
-//            robot.move();
-//        }
-//    
-//    }
+
+
+    public void irxEstante(){
+        while(robot.getAvenue() > xstantte ){
+            if(robot.getStreet()==1 && xstantte==1 && robot.canPickThing()){
+                
+            } else {
+            }
+            robot.move();
+        }
+    
+    }
     public boolean revisar(ArrayList<Integer> avenidas, ArrayList<Integer> caies) {
         avenidas = new ArrayList<>();
         caies = new ArrayList<>();
@@ -140,10 +143,6 @@ public class Robot2 extends Thread {
                 break;
         }
         return false;
-    }
-
-    public synchronized int holi() {
-        return 2;
     }
 
     @Override
