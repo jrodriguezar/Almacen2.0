@@ -761,17 +761,53 @@ public class Pruebalmacen {
     public int valor_pro(String producto) {
         int valor = 0;
         switch (producto) {
+            case "Papas":
+                valor = 1000;
+                break;
+            case "Frijol":
+                valor = 10000;
+                break;
+            case "Arepa":
+                valor = 1000;
+                break;
+            case "Empanada":
+                valor = 1000;
+                break;
             case "Memoria":
                 valor = 2000;
                 break;
-            case "Alimento":
-                valor = 1000;
+            case "Chip":
+                valor = 7000;
+                break;
+            case "ProtoBoard":
+                valor = 17000;
+                break;
+            case "Cable":
+                valor = 3000;
                 break;
             case "Maleta":
                 valor = 3000;
                 break;
+            case "Bolso":
+                valor = 8000;
+                break;
+            case "Maletin":
+                valor = 18000;
+                break;
+            case "Billetera":
+                valor = 6000;
+                break;
             case "Munieco":
                 valor = 4000;
+                break;
+            case "Munieca":
+                valor = 9000;
+                break;
+            case "Carrito":
+                valor = 3000;
+                break;
+            case "Balon":
+                valor = 6000;
                 break;
             case "Camisa":
                 valor = 5000;
@@ -779,17 +815,11 @@ public class Pruebalmacen {
             case "Pantalon":
                 valor = 6000;
                 break;
-            case "Chip":
-                valor = 7000;
+            case "Falda":
+                valor = 12000;
                 break;
-            case "Bolso":
-                valor = 8000;
-                break;
-            case "Munieca":
-                valor = 9000;
-                break;
-            case "Frijol":
-                valor = 10000;
+            case "Top":
+                valor = 2000;
                 break;
             default:
                 System.out.println("el producto no se encuentra en nuestro inventario o esta mal escrito intente de nuevo");
