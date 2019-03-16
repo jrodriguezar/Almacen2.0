@@ -10,7 +10,6 @@ import java.util.Scanner;
  * 
  */
 public class Pruebalmacen {
-
     private City lugar;
     private Robot robot1;
     private Robot robot2;
