@@ -1,6 +1,6 @@
 package Main;
 
-import almacen.Almacen;
+import almacen.Pruebalmacen;
 import java.util.Scanner;
 
 /**
@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Almacen almacen = new Almacen();
+        Pruebalmacen almacen = new Pruebalmacen();
         int u = 0;
         int op = 0;
         Scanner teclado = new Scanner(System.in);
@@ -31,7 +31,7 @@ public class Main {
                     System.out.println("lo sentimos esa opcion no esta en el menu");
                     break;
             }
-        }while(op != 3);
+        } while (op != 3);
     }
 
 }
