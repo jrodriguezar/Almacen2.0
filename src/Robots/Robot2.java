@@ -90,11 +90,31 @@ public class Robot2 extends Thread {
 
     public void irxEstante(){
         while(robot.getAvenue() > xstantte ){
-            if(robot.getStreet()==1 && xstantte==1 && robot.canPickThing()){
-                
-            } else {
-            }
             robot.move();
+            if(robot.getStreet()==1 && xstantte==1 && robot.canPickThing()){
+               robot.pickThing();
+               girar(2);
+                while(robot.frontIsClear()){
+                    robot.move();
+                }
+                robot.putThing();
+                girar(2);
+                while(robot.frontIsClear()){
+                    robot.move();
+                }
+                try{
+                    robot.pickThing();
+                }catch(Exception e){
+                    System.out.println("no hay estante para recoger");           
+                }
+                girar(3);
+                while(robot.frontIsClear()){
+                    robot.move();
+                }
+                    girar(3);
+
+            }
+            
         }
     
     }
