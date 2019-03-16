@@ -18,7 +18,7 @@ public class Robot2 extends Thread {
         this.robot = robot;
         this.city = city;
     }
-    
+
     public void mover(int pasos) {
         for (int i = pasos; i > 0; i--) {
             robot.move();
@@ -34,13 +34,13 @@ public class Robot2 extends Thread {
     public void giroDerecha() {
         girar(3);
     }
-    
-    public void recoger(){
-        if(robot.canPickThing()){
+
+    public void recoger() {
+        if (robot.canPickThing()) {
             robot.pickThing();
         }
     }
-    
+
     public void mira_este() {
         while (robot.getDirection() != Direction.EAST) {
             robot.turnLeft();
@@ -52,23 +52,23 @@ public class Robot2 extends Thread {
             robot.turnLeft();
         }
     }
-    
-    public void fila(int num_disp_cola){
-        while(robot.frontIsClear() != false){
+
+    public void fila(int num_disp_cola) {
+        while (robot.frontIsClear() != false) {
             robot.move();
         }
         mira_abajo();
         mover(1);
         girar(1);
-        if(!robot.frontIsClear()){
-        girar(3);
-        mover(1);
-        girar(1);
+        if (!robot.frontIsClear()) {
+            girar(3);
+            mover(1);
+            girar(1);
         }
         mira_abajo();
         mover(num_disp_cola);
     }
-    
+
     /*public void mover_robotsac(String nombre){
         while (robot[posicion].getStreet() != buscar_streetsacar(nombre)) {
                 robot[posicion].move();
@@ -166,16 +166,7 @@ public class Robot2 extends Thread {
         }
     }*/
 
-    public  boolean hay_robot_frente(ArrayList<Integer> a,ArrayList<Integer> c){
-        for (int i = 0; i < a.size(); i++) {
-                if(c.get(i).equals(robot.getStreet()) && a.get(i).equals(robot.getAvenue())){
-            
-                }
-        }
-        return false;
-    }
-    
-    public boolean revisar(ArrayList<Integer> avenidas, ArrayList<Integer> caies) {//arreglar para que disponga cada una de las intersecciones y que estas intersecciones se vayan actualizando siempre y eliminando las anteriores
+    public boolean revisar(ArrayList<Integer> avenidas, ArrayList<Integer> caies) {
         avenidas = new ArrayList<>();
         caies = new ArrayList<>();
         for (Robot r : this.city.examineRobots()) {
@@ -184,42 +175,48 @@ public class Robot2 extends Thread {
         }
         switch (robot.getDirection()) {
             case NORTH:
-                if (caies.contains(robot.getStreet() - 1) && avenidas.contains(robot.getAvenue())) {
-                    System.out.println("true arriba");
-                    return true;
+                for (int i = 0; i < avenidas.size(); i++) {                       
+                    if (caies.get(i).equals(robot.getStreet()-1) && avenidas.get(i).equals(robot.getAvenue())) {
+                        System.out.println("true arriba");
+                        return true;
+                    }
                 }
-            break;
-                
+                break;
+
             case SOUTH:
-                if (caies.contains(robot.getStreet() + 1) && avenidas.contains(robot.getAvenue())) {
-                    System.out.println("true abajo");
-                    return true;
+                for (int i = 0; i < avenidas.size(); i++) {                     
+                    if (caies.get(i).equals(robot.getStreet()+1) && avenidas.get(i).equals(robot.getAvenue())) {
+                        System.out.println("true abajo");
+                        return true;
+                    }
                 }
-            break;
-            
+                break;
+
             case WEST:
-                if (caies.contains(robot.getStreet()) && avenidas.contains(robot.getAvenue() - 1)) {
-                    System.out.println("true izquierda");
-                    return true;
-                }
-            break;
-            
+                for (int i = 0; i < avenidas.size(); i++) {                     
+                    if (caies.get(i).equals(robot.getStreet()) && avenidas.get(i).equals(robot.getAvenue()-1)) {
+                        System.out.println("true abajo");
+                        return true;
+                    }
+                }                
+                break;
+
             case EAST:
-                if (caies.contains(robot.getStreet()) && avenidas.contains(robot.getAvenue() + 1)) {
-                    System.out.println("true derecha");
-                    return true;
-                }
-            break;
+                for (int i = 0; i < avenidas.size(); i++) {                     
+                    if (caies.get(i).equals(robot.getStreet()) && avenidas.get(i).equals(robot.getAvenue()+1)) {
+                        System.out.println("true abajo");
+                        return true;
+                    }
+                }                
+                break;
         }
         return false;
     }
-    
-    public synchronized int holi(){
+
+    public synchronized int holi() {
         return 2;
     }
-    
-    
-    
+
     @Override
     public void run() {
         if (true) {
@@ -244,13 +241,16 @@ public class Robot2 extends Thread {
                     robot.move();
                 } else {
                     try {
-                        sleep( (int)(Math.random() * 2600 ) );
-                        } catch( InterruptedException e ) {
-                            ;}
+                        sleep((int) (Math.random() * 1000));
+                    } catch (InterruptedException e) {
+                        ;
+                    }
                 }
             }
         }
     }
+//tal vez sirva para mover ciertos pasos (aun no lo considero necesaria )
+//ninguna de las dos funciones siguientes son necesarias en realodas
     public void run(int pasos) {
         if (true) {
             ArrayList<Integer> avenidas = new ArrayList<>();
@@ -274,9 +274,10 @@ public class Robot2 extends Thread {
                     robot.move();
                 } else {
                     try {
-                        sleep( (int)(Math.random() * 2600 ) );
-                        } catch( InterruptedException e ) {
-                            ;}
+                        sleep((int) (Math.random() * 1000));
+                    } catch (InterruptedException e) {
+                        ;
+                    }
                 }
             }
         }
@@ -289,6 +290,6 @@ public class Robot2 extends Thread {
         for (int i = 0; i < 10; i++) {
             robot.move();
         }
-        
+
     }
 }

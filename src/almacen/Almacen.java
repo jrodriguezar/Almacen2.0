@@ -37,17 +37,16 @@ public class Almacen {
         facturas = new ArrayList<>();
         robot = new Robot[10];
         puestosi = new int[10][2];
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < 13; i++) {
             Wall norte = new Wall(almacen, 0, i, Direction.NORTH);
         }
-        for (int i = 0; i < 10; i++) {
-            //Wall norte = new Wall(almacen, 0, i, Direction.NORTH);
+        for (int i = 0; i < 12; i++) {
             //pared izquierda
-            if (i < 6) {
+            if (i < 10) {
                 Wall izqui = new Wall(almacen, i, 0, Direction.WEST);
             }
             
-            if (i > 6 && i<8 ) {
+            if (i > 10 && i<1 ) {
                 Wall izqui = new Wall(almacen, i, 0, Direction.WEST);
             }
 
