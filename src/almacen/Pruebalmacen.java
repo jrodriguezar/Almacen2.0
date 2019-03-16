@@ -13,27 +13,30 @@ import java.util.Scanner;
 /**
  *
  * @author Jhon
- * 
+ *
  */
 public class Pruebalmacen {
+
     private City lugar;
     private Robot robot1;
     private Robot robot2;
-    
+
     //Aprobados para la parte logica
     private Scanner teclado;
     private Estante[][] matriz;
     private int nfacturas;
     private ArrayList<Factura> facturas;
 
+    private Robot empleado;
+
     public Pruebalmacen() {
-        
+
         this.lugar = new City();
         teclado = new Scanner(System.in);
-        
+
         this.nfacturas = 0;
         this.facturas = new ArrayList<>();
-        
+
         int num = 1;
         int iter = 0;
         nfacturas = 0;
@@ -48,9 +51,10 @@ public class Pruebalmacen {
             //pared izquierda
             if (i < 11) {
                 Wall izqui = new Wall(lugar, i, 0, Direction.WEST);
+
             }
-            
-            if (i > 6 && i<8 ) {
+
+            if (i > 6 && i < 8) {
                 Wall izqui = new Wall(lugar, 12, 0, Direction.WEST);
             }
 
@@ -59,18 +63,20 @@ public class Pruebalmacen {
                 Wall derecha = new Wall(lugar, i, 10, Direction.EAST);
             }
 
-            Wall sur_divisiones = new Wall(lugar, 12, i, Direction.EAST);
-            Wall sur = new Wall(lugar, 12, i, Direction.SOUTH);
-            //creo robots almacenadores
-            Robotamazon robo = new Robotamazon();
-            Robot reobot = new Robot(lugar, 12, i, Direction.NORTH, 0);
-            reobot.setIcon(robo);
-            reobot.setLabel("Robot" + " " + num);
+            if (i < 10) {
+                Wall sur_divisiones = new Wall(lugar, 12, i, Direction.EAST);
+                Wall sur = new Wall(lugar, 12, i, Direction.SOUTH);
+                //creo robots almacenadores
+                Robotamazon robo = new Robotamazon();
+                Robot reobot = new Robot(lugar, 12, i, Direction.NORTH, 0);
+                reobot.setIcon(robo);
+                reobot.setLabel("Robot" + " " + num);
+            }
 //            robot[iter] = reobot;
             num++;
             iter++;
         }
-        
+
         //Alimentos
         Producto alimento = new Producto("Papas", 1000);
         Producto alimento1 = new Producto("Frijol", 10000);
@@ -96,7 +102,7 @@ public class Pruebalmacen {
         Producto ropa2 = new Producto("Pantalon", 6000);
         Producto ropa3 = new Producto("Falda", 12000);
         Producto ropa4 = new Producto("Top", 2000);
-        
+
         //Espacios con comida
         Espacio[][] espacioc1 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
@@ -109,7 +115,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         Espacio[][] espacioc2 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 7; j++) {
@@ -121,7 +127,7 @@ public class Pruebalmacen {
                 }
             }
         }
-            
+
         Espacio[][] espacioc3 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 7; j++) {
@@ -133,7 +139,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         Espacio[][] espacioc4 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 7; j++) {
@@ -145,7 +151,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         //Espacios con robotica
         Espacio[][] espacioro1 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
@@ -158,7 +164,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         Espacio[][] espacioro2 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 7; j++) {
@@ -170,7 +176,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         Espacio[][] espacioro3 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 7; j++) {
@@ -182,7 +188,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         Espacio[][] espacioro4 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 7; j++) {
@@ -194,7 +200,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         //Espacios con maletas
         Espacio[][] espaciom1 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
@@ -207,7 +213,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         Espacio[][] espaciom2 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 7; j++) {
@@ -219,7 +225,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         Espacio[][] espaciom3 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 7; j++) {
@@ -231,7 +237,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         Espacio[][] espaciom4 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 7; j++) {
@@ -243,7 +249,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         //Espacios con juguetes
         Espacio[][] espacioj1 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
@@ -256,7 +262,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         Espacio[][] espacioj2 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 7; j++) {
@@ -268,7 +274,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         Espacio[][] espacioj3 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 7; j++) {
@@ -280,7 +286,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         Espacio[][] espacioj4 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 7; j++) {
@@ -292,7 +298,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         //Espacios con ropa
         Espacio[][] espacior1 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
@@ -305,7 +311,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         Espacio[][] espacior2 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 7; j++) {
@@ -317,7 +323,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         Espacio[][] espacior3 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 7; j++) {
@@ -329,7 +335,7 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         Espacio[][] espacior4 = new Espacio[3][7];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 7; j++) {
@@ -341,22 +347,22 @@ public class Pruebalmacen {
                 }
             }
         }
-        
+
         matriz = new Estante[10][2];
-        
+
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 2; j++) {
                 if (i == 0 && j == 0) {
                     Thing zona = new Thing(lugar, j, i);
-                    Estante estante1 = new Estante(espacioc1,zona);
+                    Estante estante1 = new Estante(espacioc1, zona);
                     matriz[i][j] = estante1;
                     zona.getIcon().setColor(Color.GREEN);
                     zona.getIcon().setLabel("Papas");
                 }
-                
+
                 if (i == 0 && j == 1) {
                     Thing zona = new Thing(lugar, j, i);
-                    Estante estante2 = new Estante(espacioc2,zona);
+                    Estante estante2 = new Estante(espacioc2, zona);
                     matriz[i][j] = estante2;
                     zona.getIcon().setColor(Color.GREEN);
                     zona.getIcon().setLabel("Frijol");
@@ -369,7 +375,7 @@ public class Pruebalmacen {
                     zona1.getIcon().setColor(Color.GREEN);
                     zona1.getIcon().setLabel("Arepa");
                 }
-                
+
                 if (i == 1 && j == 1) {
                     Thing zona1 = new Thing(lugar, j, i);
                     Estante estante4 = new Estante(espacioc4, zona1);
@@ -380,12 +386,12 @@ public class Pruebalmacen {
 
                 if (i == 2 && j == 0) {
                     Thing zona2 = new Thing(lugar, j, i);
-                    Estante estante5 = new Estante(espaciom1,zona2);
+                    Estante estante5 = new Estante(espaciom1, zona2);
                     matriz[i][j] = estante5;
                     zona2.getIcon().setColor(Color.GREEN);
                     zona2.getIcon().setLabel("Maleta");
                 }
-                
+
                 if (i == 2 && j == 1) {
                     Thing zona2 = new Thing(lugar, j, i);
                     Estante estante6 = new Estante(espaciom2, zona2);
@@ -401,7 +407,7 @@ public class Pruebalmacen {
                     zona3.getIcon().setColor(Color.GREEN);
                     zona3.getIcon().setLabel("Maletin");
                 }
-                
+
                 if (i == 3 && j == 1) {
                     Thing zona3 = new Thing(lugar, j, i);
                     Estante estante8 = new Estante(espaciom4, zona3);
@@ -417,7 +423,7 @@ public class Pruebalmacen {
                     zona4.getIcon().setColor(Color.GREEN);
                     zona4.getIcon().setLabel("Memoria");
                 }
-                
+
                 if (i == 4 && j == 1) {
                     Thing zona4 = new Thing(lugar, j, i);
                     Estante estante10 = new Estante(espacioro2, zona4);
@@ -428,12 +434,12 @@ public class Pruebalmacen {
 
                 if (i == 5 && j == 0) {
                     Thing zona5 = new Thing(lugar, j, i);
-                    Estante estante11 = new Estante(espacioro2, zona5);
+                    Estante estante11 = new Estante(espacioro3, zona5);
                     matriz[i][j] = estante11;
                     zona5.getIcon().setColor(Color.GREEN);
                     zona5.getIcon().setLabel("ProtoBoard");
                 }
-                
+
                 if (i == 5 && j == 1) {
                     Thing zona5 = new Thing(lugar, j, i);
                     Estante estante12 = new Estante(espacioro4, zona5);
@@ -449,7 +455,7 @@ public class Pruebalmacen {
                     zona6.getIcon().setColor(Color.GREEN);
                     zona6.getIcon().setLabel("Munieco");
                 }
-                
+
                 if (i == 6 && j == 1) {
                     Thing zona6 = new Thing(lugar, j, i);
                     Estante estante14 = new Estante(espacioj2, zona6);
@@ -465,7 +471,7 @@ public class Pruebalmacen {
                     zona7.getIcon().setColor(Color.GREEN);
                     zona7.getIcon().setLabel("Carrito");
                 }
-                
+
                 if (i == 7 && j == 1) {
                     Thing zona7 = new Thing(lugar, j, i);
                     Estante estante16 = new Estante(espacioj4, zona7);
@@ -481,7 +487,7 @@ public class Pruebalmacen {
                     zona8.getIcon().setColor(Color.GREEN);
                     zona8.getIcon().setLabel("Camisa");
                 }
-                
+
                 if (i == 8 && j == 1) {
                     Thing zona8 = new Thing(lugar, j, i);
                     Estante estante18 = new Estante(espacior2, zona8);
@@ -497,7 +503,7 @@ public class Pruebalmacen {
                     zona9.getIcon().setColor(Color.GREEN);
                     zona9.getIcon().setLabel("Falda");
                 }
-                
+
                 if (i == 9 && j == 1) {
                     Thing zona9 = new Thing(lugar, j, i);
                     Estante estante20 = new Estante(espacior4);
@@ -507,14 +513,13 @@ public class Pruebalmacen {
                 }
             }
         }
-        
-        /*Trabajador trabaja = new Trabajador();
-        empleado = new Robot(almacen, 12, 10, Direction.NORTH, 0);
-        empleado.setIcon(trabaja);
-        empleado.setLabel("Empleado");*/
-        
+
+        Trabajador trabaja = new Trabajador();
+        this.empleado = new Robot(lugar, 12, 10, Direction.NORTH, 0);
+        this.empleado.setIcon(trabaja);
+        this.empleado.setLabel("Empleado");
     }
-    
+
     public boolean espacio_vacio() {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 2; j++) {
@@ -525,7 +530,7 @@ public class Pruebalmacen {
         }
         return false;
     }
-    
+
     public boolean buscar_producto(String Producto) {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 2; j++) {
@@ -536,8 +541,8 @@ public class Pruebalmacen {
         }
         return false;
     }
-    
-     public int buscar_avenueingresar(String Producto) {
+
+    public int buscar_avenueingresar(String Producto) {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 2; j++) {
                 if (matriz[i][j].buscar_producto(Producto)) {
@@ -549,12 +554,12 @@ public class Pruebalmacen {
         }
         return -1;
     }
-    
+
     public int buscar_avenuesacar(String Producto) {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 2; j++) {
                 if (matriz[i][j].buscar_producto(Producto)) {
-                    if (matriz[i][j].can_productos(Producto)>0) {
+                    if (matriz[i][j].can_productos(Producto) > 0) {
                         return i;
                     }
                 }
@@ -567,7 +572,7 @@ public class Pruebalmacen {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 2; j++) {
                 if (matriz[i][j].buscar_producto(product)) {
-                    if (matriz[i][j].espacio_vacio()){
+                    if (matriz[i][j].espacio_vacio()) {
                         return j;
                     }
                 }
@@ -575,12 +580,12 @@ public class Pruebalmacen {
         }
         return -1;
     }
-    
+
     public int buscar_streetsacar(String product) {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 2; j++) {
                 if (matriz[i][j].buscar_producto(product)) {
-                    if (matriz[i][j].can_productos(product)>0){
+                    if (matriz[i][j].can_productos(product) > 0) {
                         return j;
                     }
                 }
@@ -588,35 +593,35 @@ public class Pruebalmacen {
         }
         return -1;
     }
-    
-    public int can_espacios(int columna, int fila){
+
+    public int can_espacios(int columna, int fila) {
         int contador = 0;
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 2; j++) {
-                if (i==columna) {
-                    if (j==fila) {
-                        contador+=matriz[i][j].can_espacios();
+                if (i == columna) {
+                    if (j == fila) {
+                        contador += matriz[i][j].can_espacios();
                     }
                 }
             }
         }
         return contador;
     }
-    
-    public int can_productos(int columna, int fila, String producto){
+
+    public int can_productos(int columna, int fila, String producto) {
         int contador = 0;
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 2; j++) {
-                if (i==columna) {
-                    if (j==fila) {
-                        contador+=matriz[i][j].can_productos(producto);
+                if (i == columna) {
+                    if (j == fila) {
+                        contador += matriz[i][j].can_productos(producto);
                     }
                 }
             }
         }
         return contador;
     }
-    
+
     public int iden_colum(String producto) {
         int columna = 0;
         switch (producto) {
@@ -686,7 +691,7 @@ public class Pruebalmacen {
         }
         return columna;
     }
-    
+
     public int iden_street(String producto) {
         int columna = 0;
         switch (producto) {
@@ -756,7 +761,7 @@ public class Pruebalmacen {
         }
         return columna;
     }
-    
+
     public int valor_pro(String producto) {
         int valor = 0;
         switch (producto) {
@@ -826,8 +831,8 @@ public class Pruebalmacen {
         }
         return valor;
     }
-    
-    /*public boolean ingresar_productoal() {
+
+    public boolean ingresar_productoal() {
         int num_disp_cola = 9;
         if (espacio_vacio() == false) {
             System.out.println("No hay espacio disponible en el inventario");
@@ -841,7 +846,6 @@ public class Pruebalmacen {
             if (tip <= 10) {
                 while (f < tip) {
                     while (s < tip) {
-                        //teclado.nextLine();
                         System.out.println("Ingrese el nombre del producto: ");
                         String nombre = teclado.next();
                         System.out.println("Ingrese el valor del producto: ");
@@ -853,60 +857,91 @@ public class Pruebalmacen {
                             String cantidade = teclado.next();
                             int cantidad = Integer.parseInt(cantidade);
                             int columna = iden_colum(nombre);
-                            if (cantidad <= can_espacios(columna,0) + can_espacios(columna,1)) {
-                                if (cantidad <= can_espacios(columna,0)) {
-                                    movimiento_robot(nombre, num_disp_cola);
-                                    for(int i=0; i < cantidad; i++){
-                                        matriz[columna][0].ingresa(product);
-                                    }
-                                    num_disp_cola--;
-                                    s++;
-                                } else {
-                                    if (can_espacios(columna,0)==0) {
-                                        movimiento_robot(nombre, num_disp_cola);
-                                        for(int i=0; i < cantidad; i++){
-                                            matriz[columna][1].ingresa(product);
-                                        }
-                                        num_disp_cola--;
-                                        s++;
-                                    }else{
-                                    movimiento_robot(nombre, num_disp_cola);
-                                    int g=0;
-                                    int can_espacios = can_espacios(columna,0);
-                                    while(g < can_espacios){
-                                        matriz[columna][0].ingresa(product);
-                                        g++;
-                                    }
-                                    num_disp_cola--;
-                                    movimiento_robot(nombre, num_disp_cola);
-                                    int y=0;
-                                    can_espacios = can_espacios(columna,1);
-                                    while(y < can_espacios && g < cantidad){
-                                        matriz[columna][1].ingresa(product);
-                                        y++;
-                                        g++;
-                                    }
-                                    num_disp_cola--;
-                                    s++;
-                                    }
+                            int street = iden_street(nombre);
+                            if (cantidad <= can_espacios(columna, street)) {
+                                //movimiento_robot(nombre, num_disp_cola);
+                                for (int i = 0; i < cantidad; i++) {
+                                    matriz[columna][street].ingresa(product);
                                 }
+                                num_disp_cola--;
+                                s++;
                             } else {
+
                                 System.out.println("Lo sentimos, no hay espacio suficiente");
                             }
                         } else {
-                            System.out.println("El producto ingresado no se maneja en este almacen, para volver a intentarlo presione enter.");
+                            System.out.println("El producto ingresado no se maneja en este almacen.");
                         }
                     }
                     f++;
                 }
-                devolver(num_disp_cola);
+                //devolver(num_disp_cola);
             } else {
                 System.out.println("No tenemos tantos tipos disponibles. Vuelva a intentarlo por favor");
                 return false;
             }
         }
         return true;
-    }*/
+    }
+
+    public boolean sacar_estante() {
+        this.facturas.add(new Factura());
+        if (this.facturas.isEmpty()) {
+            System.out.println(" no se agrego factura");
+        }
+        int num_disp_cola = 9;
+        System.out.println("Cuantos tipos de productos va a sacar?(maximo 20)");
+        String tipo = teclado.next();
+        int tip = Integer.parseInt(tipo);
+        int s = 0;
+        int f = s;
+        int avenue = 0;
+        if (tip <= 20) {
+            while (f < tip) {
+                while (s < tip) {
+                    System.out.println("Ingrese el nombre del producto: ");
+                    String nombre = teclado.next();
+                    if (buscar_producto(nombre)) {
+                        System.out.println("Ingrese la cantidad de este producto: ");
+                        String cantidade = teclado.next();
+                        int cantidad = Integer.parseInt(cantidade);
+                        int columna = iden_colum(nombre);
+                        int street = iden_street(nombre);
+                        if (cantidad <= can_productos(columna, street, nombre)) {
+                            //movimiento_robotsac(nombre, num_disp_cola);
+                            for (int i = 0; i < cantidad; i++) {
+                                facturas.get(0).getProductos().add(i, matriz[columna][street].saca(nombre));
+                            }
+                            num_disp_cola--;
+                            s++;
+                        } else {
+
+                            System.out.println("Lo sentimos, no hay tantos productos disponibles.");
+                        }
+                    } else {
+                        System.out.println("Lo sentimos, el producto no se encuentra en el inventario");
+                    }
+                }
+
+                f++;
+            }
+//                devolver(num_disp_cola);
+//                giroe(3);
+//                empleado.move();
+//                Thing zona = new Thing(almacen, 12, 11);
+//                zona.getIcon().setColor(Color.ORANGE);
+//                zona.getIcon().setLabel("Paquete");
+//                giroe(2);                
+//                empleado.move();
+//                giroe(3);
+//                movimiento_envio();
+            facturas.get(nfacturas).imprimirfact();
+        } else {
+            System.out.println("No tenemos tantos tipos disponibles. Vuelva a intentarlo por favor");
+            return false;
+        }
+        return true;
+    }
 
     public void iniciar1() {
         String ingresa = new String();
@@ -917,7 +952,7 @@ public class Pruebalmacen {
         if (a == 1) {
             Robot2 hilo1 = new Robot2(robot1, lugar);
             hilo1.start();
-            
+
             hilo1.setPriority(10);
             Robot2 hilo2 = new Robot2(robot2, lugar);
             hilo2.start();
@@ -929,26 +964,26 @@ public class Pruebalmacen {
 
     public static void main(String[] args) {
         Pruebalmacen almacen = new Pruebalmacen();
-//        int u = 0;
-//        int op = 0;
-//        Scanner teclado = new Scanner(System.in);
-//        do {
-//            System.out.println("Escoja una opción:  ");
-//            System.out.println("1:Ingresar un nuevo producto");
-//            System.out.println("2:Realizar pedido");
-//            System.out.println("3:terminar la op");
-//            op = teclado.nextInt();
-//            switch (op) {
-//                case 1:
-//                    almacen.ingresar_productoal();
-//                    break;
-//                case 2:
-//                    almacen.sacar_estante();
-//                    break;
-//                default:
-//                    System.out.println("lo sentimos esa opcion no esta en el menu");
-//                    break;
-//            }
-//        }while(op != 3);
+        int u = 0;
+        int op = 0;
+        Scanner teclado = new Scanner(System.in);
+        do {
+            System.out.println("Escoja una opción:  ");
+            System.out.println("1:Ingresar un nuevo producto");
+            System.out.println("2:Realizar pedido");
+            System.out.println("3:terminar la op");
+            op = teclado.nextInt();
+            switch (op) {
+                case 1:
+                    almacen.ingresar_productoal();
+                    break;
+                case 2:
+                    almacen.sacar_estante();
+                    break;
+                default:
+                    System.out.println("lo sentimos esa opcion no esta en el menu");
+                    break;
+            }
+        } while (op != 3);
     }
 }
