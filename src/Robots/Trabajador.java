@@ -1,4 +1,4 @@
-package almacen;
+package Robots;
 import java.awt.*;
 import becker.robots.icons.*;
 

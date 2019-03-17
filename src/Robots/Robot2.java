@@ -18,6 +18,8 @@ public class Robot2 extends Thread {
     private int xrobot;
     private int yrobot;
 
+    
+    
     public Robot2(Robot robot, City city, int xstantte, int ystante) {
         this.robot = robot;
         this.city = city;

@@ -1,5 +1,6 @@
 package almacen;
 
+import Robots.Trabajador;
 import BussinesLogic.Factura;
 import Estante.Espacio;
 import Estante.Estante;
