@@ -33,7 +33,9 @@ public class Pruebalmacen {
 
         this.lugar = new City();
         teclado = new Scanner(System.in);
-
+        //robot de prueba
+        robot1 = new Robot(lugar, 12, 2, Direction.NORTH, 0);
+        //
         this.nfacturas = 0;
         this.facturas = new ArrayList<>();
 
@@ -514,7 +516,7 @@ public class Pruebalmacen {
         }
 
         Trabajador trabaja = new Trabajador();
-        Thing empleado = new Thing(lugar, 13, 10);
+        Thing empleado = new Thing(lugar, 14, 10);
         empleado.setIcon(trabaja);
         empleado.getIcon().setLabel("Empleado");
     }
@@ -887,40 +889,194 @@ public class Pruebalmacen {
                 Robot2 ro8 = new Robot2(robor[7],lugar,robor[7].getAvenue(),robor[7].getStreet());
                 Robot2 ro9 = new Robot2(robor[8],lugar,robor[8].getAvenue(),robor[8].getStreet());
                 Robot2 ro10 = new Robot2(robor[9],lugar,robor[9].getAvenue(),robor[9].getStreet());
-                //Aqui van los movimientos de la parte grafica
-                
-                switch(tip){
+            //Aqui van los movimientos de la parte grafica
+            switch(tip){
                     case 1:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro1.start();
                     break;
                     case 2:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro1.start();
+                        ro2.start();
                     break;
                     case 3:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro3.setXstantte(avenues.get(2));
+                        ro3.setYstante(streets.get(2));
+                        ro1.start();
+                        ro2.start();
+                        ro3.start();
                     break;
                     case 4:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro3.setXstantte(avenues.get(2));
+                        ro3.setYstante(streets.get(2));
+                        ro4.setXstantte(avenues.get(3));
+                        ro4.setYstante(streets.get(3));
+                        ro1.start();
+                        ro2.start();
+                        ro3.start();
+                        ro4.start();
                     break;
                     case 5:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro3.setXstantte(avenues.get(2));
+                        ro3.setYstante(streets.get(2));
+                        ro4.setXstantte(avenues.get(3));
+                        ro4.setYstante(streets.get(3));
+                        ro5.setXstantte(avenues.get(4));
+                        ro5.setYstante(streets.get(4));
+                        ro1.start();
+                        ro2.start();
+                        ro3.start();
+                        ro4.start();
+                        ro5.start();
                     break;
                     case 6:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro3.setXstantte(avenues.get(2));
+                        ro3.setYstante(streets.get(2));
+                        ro4.setXstantte(avenues.get(3));
+                        ro4.setYstante(streets.get(3));
+                        ro5.setXstantte(avenues.get(4));
+                        ro5.setYstante(streets.get(4));
+                        ro6.setXstantte(avenues.get(5));
+                        ro6.setYstante(streets.get(5));
+                        ro1.start();
+                        ro2.start();
+                        ro3.start();
+                        ro4.start();
+                        ro5.start();
+                        ro6.start();
                     break;
                     case 7:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro3.setXstantte(avenues.get(2));
+                        ro3.setYstante(streets.get(2));
+                        ro4.setXstantte(avenues.get(3));
+                        ro4.setYstante(streets.get(3));
+                        ro5.setXstantte(avenues.get(4));
+                        ro5.setYstante(streets.get(4));
+                        ro6.setXstantte(avenues.get(5));
+                        ro6.setYstante(streets.get(5));
+                        ro7.setXstantte(avenues.get(6));
+                        ro7.setYstante(streets.get(6));
+                        ro1.start();
+                        ro2.start();
+                        ro3.start();
+                        ro4.start();
+                        ro5.start();
+                        ro6.start();
+                        ro7.start();
                     break;
                     case 8:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro3.setXstantte(avenues.get(2));
+                        ro3.setYstante(streets.get(2));
+                        ro4.setXstantte(avenues.get(3));
+                        ro4.setYstante(streets.get(3));
+                        ro5.setXstantte(avenues.get(4));
+                        ro5.setYstante(streets.get(4));
+                        ro6.setXstantte(avenues.get(5));
+                        ro6.setYstante(streets.get(5));
+                        ro7.setXstantte(avenues.get(6));
+                        ro7.setYstante(streets.get(6));
+                        ro8.setXstantte(avenues.get(7));
+                        ro8.setYstante(streets.get(7));
+                        ro1.start();
+                        ro2.start();
+                        ro3.start();
+                        ro4.start();
+                        ro5.start();
+                        ro6.start();
+                        ro7.start();
+                        ro8.start();
                     break;
                     case 9:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro3.setXstantte(avenues.get(2));
+                        ro3.setYstante(streets.get(2));
+                        ro4.setXstantte(avenues.get(3));
+                        ro4.setYstante(streets.get(3));
+                        ro5.setXstantte(avenues.get(4));
+                        ro5.setYstante(streets.get(4));
+                        ro6.setXstantte(avenues.get(5));
+                        ro6.setYstante(streets.get(5));
+                        ro7.setXstantte(avenues.get(6));
+                        ro7.setYstante(streets.get(6));
+                        ro8.setXstantte(avenues.get(7));
+                        ro8.setYstante(streets.get(7));
+                        ro9.setXstantte(avenues.get(8));
+                        ro9.setYstante(streets.get(8));
+                        ro1.start();
+                        ro2.start();
+                        ro3.start();
+                        ro4.start();
+                        ro5.start();
+                        ro6.start();
+                        ro7.start();
+                        ro8.start();
+                        ro9.start();
                     break;
                     case 10:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro3.setXstantte(avenues.get(2));
+                        ro3.setYstante(streets.get(2));
+                        ro4.setXstantte(avenues.get(3));
+                        ro4.setYstante(streets.get(3));
+                        ro5.setXstantte(avenues.get(4));
+                        ro5.setYstante(streets.get(4));
+                        ro6.setXstantte(avenues.get(5));
+                        ro6.setYstante(streets.get(5));
+                        ro7.setXstantte(avenues.get(6));
+                        ro7.setYstante(streets.get(6));
+                        ro8.setXstantte(avenues.get(7));
+                        ro8.setYstante(streets.get(7));
+                        ro9.setXstantte(avenues.get(8));
+                        ro9.setYstante(streets.get(8));
+                        ro10.setXstantte(avenues.get(9));
+                        ro10.setYstante(streets.get(9));
+                        ro1.start();
+                        ro2.start();
+                        ro3.start();
+                        ro4.start();
+                        ro5.start();
+                        ro6.start();
+                        ro7.start();
+                        ro8.start();
+                        ro9.start();
+                        ro10.start();
                     break;
-                }
+            }
                 
             } else {
                 System.out.println("No tenemos tantos tipos disponibles. Vuelva a intentarlo por favor");
@@ -1003,28 +1159,176 @@ public class Pruebalmacen {
                         ro2.start();
                     break;
                     case 3:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro3.setXstantte(avenues.get(2));
+                        ro3.setYstante(streets.get(2));
+                        ro1.start();
+                        ro2.start();
+                        ro3.start();
                     break;
                     case 4:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro3.setXstantte(avenues.get(2));
+                        ro3.setYstante(streets.get(2));
+                        ro4.setXstantte(avenues.get(3));
+                        ro4.setYstante(streets.get(3));
+                        ro1.start();
+                        ro2.start();
+                        ro3.start();
+                        ro4.start();
                     break;
                     case 5:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro3.setXstantte(avenues.get(2));
+                        ro3.setYstante(streets.get(2));
+                        ro4.setXstantte(avenues.get(3));
+                        ro4.setYstante(streets.get(3));
+                        ro5.setXstantte(avenues.get(4));
+                        ro5.setYstante(streets.get(4));
+                        ro1.start();
+                        ro2.start();
+                        ro3.start();
+                        ro4.start();
+                        ro5.start();
                     break;
                     case 6:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro3.setXstantte(avenues.get(2));
+                        ro3.setYstante(streets.get(2));
+                        ro4.setXstantte(avenues.get(3));
+                        ro4.setYstante(streets.get(3));
+                        ro5.setXstantte(avenues.get(4));
+                        ro5.setYstante(streets.get(4));
+                        ro6.setXstantte(avenues.get(5));
+                        ro6.setYstante(streets.get(5));
+                        ro1.start();
+                        ro2.start();
+                        ro3.start();
+                        ro4.start();
+                        ro5.start();
+                        ro6.start();
                     break;
                     case 7:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro3.setXstantte(avenues.get(2));
+                        ro3.setYstante(streets.get(2));
+                        ro4.setXstantte(avenues.get(3));
+                        ro4.setYstante(streets.get(3));
+                        ro5.setXstantte(avenues.get(4));
+                        ro5.setYstante(streets.get(4));
+                        ro6.setXstantte(avenues.get(5));
+                        ro6.setYstante(streets.get(5));
+                        ro7.setXstantte(avenues.get(6));
+                        ro7.setYstante(streets.get(6));
+                        ro1.start();
+                        ro2.start();
+                        ro3.start();
+                        ro4.start();
+                        ro5.start();
+                        ro6.start();
+                        ro7.start();
                     break;
                     case 8:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro3.setXstantte(avenues.get(2));
+                        ro3.setYstante(streets.get(2));
+                        ro4.setXstantte(avenues.get(3));
+                        ro4.setYstante(streets.get(3));
+                        ro5.setXstantte(avenues.get(4));
+                        ro5.setYstante(streets.get(4));
+                        ro6.setXstantte(avenues.get(5));
+                        ro6.setYstante(streets.get(5));
+                        ro7.setXstantte(avenues.get(6));
+                        ro7.setYstante(streets.get(6));
+                        ro8.setXstantte(avenues.get(7));
+                        ro8.setYstante(streets.get(7));
+                        ro1.start();
+                        ro2.start();
+                        ro3.start();
+                        ro4.start();
+                        ro5.start();
+                        ro6.start();
+                        ro7.start();
+                        ro8.start();
                     break;
                     case 9:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro3.setXstantte(avenues.get(2));
+                        ro3.setYstante(streets.get(2));
+                        ro4.setXstantte(avenues.get(3));
+                        ro4.setYstante(streets.get(3));
+                        ro5.setXstantte(avenues.get(4));
+                        ro5.setYstante(streets.get(4));
+                        ro6.setXstantte(avenues.get(5));
+                        ro6.setYstante(streets.get(5));
+                        ro7.setXstantte(avenues.get(6));
+                        ro7.setYstante(streets.get(6));
+                        ro8.setXstantte(avenues.get(7));
+                        ro8.setYstante(streets.get(7));
+                        ro9.setXstantte(avenues.get(8));
+                        ro9.setYstante(streets.get(8));
+                        ro1.start();
+                        ro2.start();
+                        ro3.start();
+                        ro4.start();
+                        ro5.start();
+                        ro6.start();
+                        ro7.start();
+                        ro8.start();
+                        ro9.start();
                     break;
                     case 10:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro3.setXstantte(avenues.get(2));
+                        ro3.setYstante(streets.get(2));
+                        ro4.setXstantte(avenues.get(3));
+                        ro4.setYstante(streets.get(3));
+                        ro5.setXstantte(avenues.get(4));
+                        ro5.setYstante(streets.get(4));
+                        ro6.setXstantte(avenues.get(5));
+                        ro6.setYstante(streets.get(5));
+                        ro7.setXstantte(avenues.get(6));
+                        ro7.setYstante(streets.get(6));
+                        ro8.setXstantte(avenues.get(7));
+                        ro8.setYstante(streets.get(7));
+                        ro9.setXstantte(avenues.get(8));
+                        ro9.setYstante(streets.get(8));
+                        ro10.setXstantte(avenues.get(9));
+                        ro10.setYstante(streets.get(9));
+                        ro1.start();
+                        ro2.start();
+                        ro3.start();
+                        ro4.start();
+                        ro5.start();
+                        ro6.start();
+                        ro7.start();
+                        ro8.start();
+                        ro9.start();
+                        ro10.start();
                     break;
             }
             facturas.get(nfacturas).imprimirfact();
@@ -1035,22 +1339,22 @@ public class Pruebalmacen {
         return true;
     }
 
-    public void iniciar1() {
-        String ingresa = new String();
-        Scanner e = new Scanner(System.in);
-        System.out.println("Ingrese el valor");
-        ingresa = e.next();
-        int a = Integer.parseInt(ingresa);
-        if (a == 1) {
-            Robot2 hilo1 = new Robot2(robot1, lugar);
-            hilo1.start();
-
-            hilo1.setPriority(10);
-            Robot2 hilo2 = new Robot2(robot2, lugar);
-            hilo2.start();
-        } else {
-            Robot2 hilo2 = new Robot2(robot2, lugar);
-            hilo2.start();
-        }
-    }
+//    public void iniciar1() {
+//        String ingresa = new String();
+//        Scanner e = new Scanner(System.in);
+//        System.out.println("Ingrese el valor");
+//        ingresa = e.next();
+//        int a = Integer.parseInt(ingresa);
+//        if (a == 1) {
+//            Robot2 hilo1 = new Robot2(robot1, lugar);
+//            hilo1.start();
+//
+//            hilo1.setPriority(10);
+//            Robot2 hilo2 = new Robot2(robot2, lugar);
+//            hilo2.start();
+//        } else {
+//            Robot2 hilo2 = new Robot2(robot2, lugar);
+//            hilo2.start();
+//        }
+//    }
 }
