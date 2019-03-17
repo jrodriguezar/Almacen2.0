@@ -877,16 +877,16 @@ public class Pruebalmacen {
                     f++;
                 }
                 //Aqui van las instancias de hilos
-                Robot2 ro1 = new Robot2(robor[0],lugar);
-                Robot2 ro2 = new Robot2(robor[1],lugar);
-                Robot2 ro3 = new Robot2(robor[2],lugar);
-                Robot2 ro4 = new Robot2(robor[3],lugar);
-                Robot2 ro5 = new Robot2(robor[4],lugar);
-                Robot2 ro6 = new Robot2(robor[5],lugar);
-                Robot2 ro7 = new Robot2(robor[6],lugar);
-                Robot2 ro8 = new Robot2(robor[7],lugar);
-                Robot2 ro9 = new Robot2(robor[8],lugar);
-                Robot2 ro10 = new Robot2(robor[9],lugar);
+                Robot2 ro1 = new Robot2(robor[0],lugar,robor[0].getAvenue(),robor[0].getStreet());
+                Robot2 ro2 = new Robot2(robor[1],lugar,robor[1].getAvenue(),robor[1].getStreet());
+                Robot2 ro3 = new Robot2(robor[2],lugar,robor[2].getAvenue(),robor[2].getStreet());
+                Robot2 ro4 = new Robot2(robor[3],lugar,robor[3].getAvenue(),robor[3].getStreet());
+                Robot2 ro5 = new Robot2(robor[4],lugar,robor[4].getAvenue(),robor[4].getStreet());
+                Robot2 ro6 = new Robot2(robor[5],lugar,robor[5].getAvenue(),robor[5].getStreet());
+                Robot2 ro7 = new Robot2(robor[6],lugar,robor[6].getAvenue(),robor[6].getStreet());
+                Robot2 ro8 = new Robot2(robor[7],lugar,robor[7].getAvenue(),robor[7].getStreet());
+                Robot2 ro9 = new Robot2(robor[8],lugar,robor[8].getAvenue(),robor[8].getStreet());
+                Robot2 ro10 = new Robot2(robor[9],lugar,robor[9].getAvenue(),robor[9].getStreet());
                 //Aqui van los movimientos de la parte grafica
                 
                 switch(tip){
@@ -977,23 +977,30 @@ public class Pruebalmacen {
                 f++;
             }
             //Aqui van las instancias de hilos
-                Robot2 ro1 = new Robot2(robor[0],lugar);
-                Robot2 ro2 = new Robot2(robor[1],lugar);
-                Robot2 ro3 = new Robot2(robor[2],lugar);
-                Robot2 ro4 = new Robot2(robor[3],lugar);
-                Robot2 ro5 = new Robot2(robor[4],lugar);
-                Robot2 ro6 = new Robot2(robor[5],lugar);
-                Robot2 ro7 = new Robot2(robor[6],lugar);
-                Robot2 ro8 = new Robot2(robor[7],lugar);
-                Robot2 ro9 = new Robot2(robor[8],lugar);
-                Robot2 ro10 = new Robot2(robor[9],lugar);
+                Robot2 ro1 = new Robot2(robor[0],lugar,robor[0].getAvenue(),robor[0].getStreet());
+                Robot2 ro2 = new Robot2(robor[1],lugar,robor[1].getAvenue(),robor[1].getStreet());
+                Robot2 ro3 = new Robot2(robor[2],lugar,robor[2].getAvenue(),robor[2].getStreet());
+                Robot2 ro4 = new Robot2(robor[3],lugar,robor[3].getAvenue(),robor[3].getStreet());
+                Robot2 ro5 = new Robot2(robor[4],lugar,robor[4].getAvenue(),robor[4].getStreet());
+                Robot2 ro6 = new Robot2(robor[5],lugar,robor[5].getAvenue(),robor[5].getStreet());
+                Robot2 ro7 = new Robot2(robor[6],lugar,robor[6].getAvenue(),robor[6].getStreet());
+                Robot2 ro8 = new Robot2(robor[7],lugar,robor[7].getAvenue(),robor[7].getStreet());
+                Robot2 ro9 = new Robot2(robor[8],lugar,robor[8].getAvenue(),robor[8].getStreet());
+                Robot2 ro10 = new Robot2(robor[9],lugar,robor[9].getAvenue(),robor[9].getStreet());
             //Aqui van los movimientos de la parte grafica
             switch(tip){
                     case 1:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro1.start();
                     break;
                     case 2:
-                        
+                        ro1.setXstantte(avenues.get(0));
+                        ro1.setYstante(streets.get(0));
+                        ro2.setXstantte(avenues.get(1));
+                        ro2.setYstante(streets.get(1));
+                        ro1.start();
+                        ro2.start();
                     break;
                     case 3:
                         
@@ -1020,16 +1027,6 @@ public class Pruebalmacen {
                         
                     break;
             }
-//                devolver(num_disp_cola);
-//                giroe(3);
-//                empleado.move();
-//                Thing zona = new Thing(almacen, 12, 11);
-//                zona.getIcon().setColor(Color.ORANGE);
-//                zona.getIcon().setLabel("Paquete");
-//                giroe(2);                
-//                empleado.move();
-//                giroe(3);
-//                movimiento_envio();
             facturas.get(nfacturas).imprimirfact();
         } else {
             System.out.println("No tenemos tantos tipos disponibles. Vuelva a intentarlo por favor");
