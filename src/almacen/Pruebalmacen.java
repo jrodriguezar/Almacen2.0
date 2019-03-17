@@ -875,7 +875,19 @@ public class Pruebalmacen {
                     }
                     f++;
                 }
+                //Aqui van las instancias de hilos
+                Robot2 ro1 = new Robot2(robor[0],lugar);
+                Robot2 ro2 = new Robot2(robor[1],lugar);
+                Robot2 ro3 = new Robot2(robor[2],lugar);
+                Robot2 ro4 = new Robot2(robor[3],lugar);
+                Robot2 ro5 = new Robot2(robor[4],lugar);
+                Robot2 ro6 = new Robot2(robor[5],lugar);
+                Robot2 ro7 = new Robot2(robor[6],lugar);
+                Robot2 ro8 = new Robot2(robor[7],lugar);
+                Robot2 ro9 = new Robot2(robor[8],lugar);
+                Robot2 ro10 = new Robot2(robor[9],lugar);
                 //Aqui van los movimientos de la parte grafica
+                
                 switch(tip){
                     case 1:
                         
@@ -945,7 +957,8 @@ public class Pruebalmacen {
                         int street = iden_street(nombre);
                         if (cantidad <= can_productos(columna, street, nombre)) {
                             //movimiento_robotsac(nombre, num_disp_cola);
-                            
+                            avenues.add(columna);
+                            streets.add(street);
                             for (int i = 0; i < cantidad; i++) {
                                 facturas.get(0).getProductos().add(i, matriz[columna][street].saca(nombre));
                             }
@@ -962,6 +975,17 @@ public class Pruebalmacen {
 
                 f++;
             }
+            //Aqui van las instancias de hilos
+                Robot2 ro1 = new Robot2(robor[0],lugar);
+                Robot2 ro2 = new Robot2(robor[1],lugar);
+                Robot2 ro3 = new Robot2(robor[2],lugar);
+                Robot2 ro4 = new Robot2(robor[3],lugar);
+                Robot2 ro5 = new Robot2(robor[4],lugar);
+                Robot2 ro6 = new Robot2(robor[5],lugar);
+                Robot2 ro7 = new Robot2(robor[6],lugar);
+                Robot2 ro8 = new Robot2(robor[7],lugar);
+                Robot2 ro9 = new Robot2(robor[8],lugar);
+                Robot2 ro10 = new Robot2(robor[9],lugar);
             //Aqui van los movimientos de la parte grafica
             switch(tip){
                     case 1:
