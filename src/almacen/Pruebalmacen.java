@@ -858,6 +858,8 @@ public class Pruebalmacen {
                             int street = iden_street(nombre);
                             if (cantidad <= can_espacios(columna, street)) {
                                 //movimiento_robot(nombre, num_disp_cola);
+                                avenues.add(columna);
+                                streets.add(street);
                                 for (int i = 0; i < cantidad; i++) {
                                     matriz[columna][street].ingresa(product);
                                 }
@@ -874,6 +876,38 @@ public class Pruebalmacen {
                     f++;
                 }
                 //Aqui van los movimientos de la parte grafica
+                switch(tip){
+                    case 1:
+                        
+                    break;
+                    case 2:
+                        
+                    break;
+                    case 3:
+                        
+                    break;
+                    case 4:
+                        
+                    break;
+                    case 5:
+                        
+                    break;
+                    case 6:
+                        
+                    break;
+                    case 7:
+                        
+                    break;
+                    case 8:
+                        
+                    break;
+                    case 9:
+                        
+                    break;
+                    case 10:
+                        
+                    break;
+                }
                 
             } else {
                 System.out.println("No tenemos tantos tipos disponibles. Vuelva a intentarlo por favor");
@@ -929,8 +963,38 @@ public class Pruebalmacen {
                 f++;
             }
             //Aqui van los movimientos de la parte grafica
-            
-            
+            switch(tip){
+                    case 1:
+                        
+                    break;
+                    case 2:
+                        
+                    break;
+                    case 3:
+                        
+                    break;
+                    case 4:
+                        
+                    break;
+                    case 5:
+                        
+                    break;
+                    case 6:
+                        
+                    break;
+                    case 7:
+                        
+                    break;
+                    case 8:
+                        
+                    break;
+                    case 9:
+                        
+                    break;
+                    case 10:
+                        
+                    break;
+            }
 //                devolver(num_disp_cola);
 //                giroe(3);
 //                empleado.move();
