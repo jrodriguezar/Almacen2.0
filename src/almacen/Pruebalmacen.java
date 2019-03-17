@@ -33,9 +33,6 @@ public class Pruebalmacen {
 
         this.lugar = new City();
         teclado = new Scanner(System.in);
-        //robot de prueba
-        robot1 = new Robot(lugar, 12, 2, Direction.NORTH, 0);
-        //
         this.nfacturas = 0;
         this.facturas = new ArrayList<>();
 
@@ -1338,23 +1335,4 @@ public class Pruebalmacen {
         }
         return true;
     }
-
-//    public void iniciar1() {
-//        String ingresa = new String();
-//        Scanner e = new Scanner(System.in);
-//        System.out.println("Ingrese el valor");
-//        ingresa = e.next();
-//        int a = Integer.parseInt(ingresa);
-//        if (a == 1) {
-//            Robot2 hilo1 = new Robot2(robot1, lugar);
-//            hilo1.start();
-//
-//            hilo1.setPriority(10);
-//            Robot2 hilo2 = new Robot2(robot2, lugar);
-//            hilo2.start();
-//        } else {
-//            Robot2 hilo2 = new Robot2(robot2, lugar);
-//            hilo2.start();
-//        }
-//    }
 }
