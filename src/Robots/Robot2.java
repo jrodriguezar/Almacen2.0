@@ -77,20 +77,8 @@ public class Robot2 extends Thread {
 
     @Override
     public void run() {
-        while (robot.getAvenue() > xstantte) {
+        while (robot.getStreet() > xstantte) {
             robot.move();
-//            if (robot.getStreet() == 1 && ystante == 1 && robot.canPickThing()) {
-//                robot.pickThing();
-//                girar(2);
-//                while (robot.frontIsClear()) {
-//                    robot.move();
-//                }
-//                robot.putThing();
-//                girar(2);
-//                while (robot.frontIsClear()) {
-//                    robot.move();
-//                }
-//            }
         }
         //se mueve al x indicado
         if (robot.getAvenue() == xstantte) {
@@ -114,11 +102,11 @@ public class Robot2 extends Thread {
 
             }
             mira_abajo();
-            while (robot.getAvenue() != 12 - 2) {
+            while (robot.getStreet() != 12 - 2) {//n
                 robot.move();
             }
             mira_este();
-            while (robot.getStreet() != 13) {
+            while (robot.getAvenue() != 13) {
                 robot.move();
             }
             mira_abajo();
@@ -126,13 +114,13 @@ public class Robot2 extends Thread {
                 robot.move();
             }
             girar(7);
-            while (robot.getStreet() != -1) {
+            while (robot.getAvenue() != -1) {
                 robot.move();
             }
             girar(3);
             robot.move();
             girar(3);
-            while (robot.getStreet() != xrobot) {
+            while (robot.getAvenue() != xrobot) {
                 robot.move();
             }
             girar(3);

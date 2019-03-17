@@ -1143,6 +1143,7 @@ public class Pruebalmacen {
             //Aqui van los movimientos de la parte grafica
             switch(tip){
                     case 1:
+                        //Robot2 ror1 = new Robot2(robor[0],lugar,robor[0].getAvenue(),robor[0].getStreet());
                         ro1.setXstantte(avenues.get(0));
                         ro1.setYstante(streets.get(0));
                         ro1.start();
